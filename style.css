@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --primary-color: #222831;
+  --secondary-color: #ff6b6b;
+  --bg-color: #948979;
+  --card-bg: #dfd0b8;
+  --text-light: #f1f1f1;
+  --highlight-color: #ffd93d;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.navhead {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+}
+.persnalizedname {
+  display: flex;
+  align-items: baseline;
+}
+
+.qoute {
+  background-color: var(--card-bg);
+  height: fit-content;
+  text-align: center;
+  position: relative;
+}
+/* .open-icon{
+  position: absolute;
+  font-size: 2rem;
+  top: 10px;
+  left: 10px;
+  
+} */
+.input-task {
+  text-align: center;
+  margin: 20px auto;
+}
+.input-task input {
+  text-align: center;
+}
+.input {
+  width: 50%;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+}
+.btn {
+  height: 30px;
+  border-radius: 30px;
+  width: 15%;
+  border: none;
+  transition: all 0.2s ease;
+  margin: 2px;
+
+}
+
+#task-list {
+  display: flex;
+  grid-template-columns: auto;
+  padding: 0% 5%;
+}
+.card {
+  background-color: var(--card-bg);
+  height: 300px;
+  width: 200px;
+  border-radius: 1rem;
+  margin: 0.5rem 0.5rem;
+  overflow-wrap: break-word;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.delete-btn:hover {
+  transform: scale(1.3);
+  /* opacity: 0.8; */
+}
+.add-btn {
+  background-color: lightgray;
+  height: 300px;
+  width: 200px;
+  border-radius: 1rem;
+  margin: 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  text-shadow: red;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover,
+.btn:hover {
+  /* background-color: lightgreen; */
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+.card h3 {
+  text-align: center;
+  padding: 10px;
+}
+hr {
+  width: 80%;
+  margin: auto;
+}
