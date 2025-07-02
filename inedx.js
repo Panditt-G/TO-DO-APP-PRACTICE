@@ -23,6 +23,14 @@ function cardadd(task) {
   let hr = document.createElement("hr");
   card.append(hr);
 
+  // date add
+  let date = document.createElement("p");
+  date.className = "date";
+  date.textContent = calendar.value
+  console.log(calendar);
+
+card.append(date);
+
   //vo deelet btn
   let deletebtn = document.createElement("i");
   deletebtn.className = "fa-solid fa-trash delete-btn";
@@ -30,6 +38,10 @@ function cardadd(task) {
 
   // clear intput
   document.querySelector(".input").value = "";
+    document.querySelector("#calendar")._flatpickr.clear()
+
+  
+
 
   deletebtn.addEventListener("click", () => {
     card.remove();
@@ -38,11 +50,13 @@ function cardadd(task) {
 
 function valuehepler() {
   let task = document.querySelector(".input").value.trim();
-  if (task === "") {
-    alert("Please enter a task");
+  let calendar = document.querySelector("#calendar")
+  
+  if (task === "" || calendar === "") {
+    alert("Please enter a task ");
     document.querySelector(".input").focus();
   } else {
-    cardadd(task);
+    cardadd(task,calendar);
   }
 }
 
@@ -58,4 +72,13 @@ document.addEventListener("keydown", function (e) {
 let addbtn = document.querySelector(".add-btn");
 addbtn.addEventListener("click", function () {
   valuehepler();
+});
+
+//calender backchodi
+
+flatpickr("#calendar", {
+  enableTime: true,
+  altInput: true,
+  altFormat: "F j, Y H:i",
+  dateFormat: "Y-m-d H:i",
 });
